@@ -9,14 +9,21 @@ function App() {
   return (
     <TestContext.Provider value={setText}>
       <div className="App">
-        <p>useContext()</p>
+        <p>{text}</p>
+        <Kid />
       </div>
     </TestContext.Provider>
   );
 }
 
-function kid() {
-  <p></p>;
+function Kid() {
+  const setText = useContext(TestContext);
+  setText("sadnan");
+  return (
+    <div>
+      <p>{setText}</p>
+    </div>
+  );
 }
 
 export default App;
